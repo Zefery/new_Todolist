@@ -38,11 +38,11 @@
                                 @endif
                             </div>
                             
-                            <a class="btn btn-light p-2 bg-{{( $todo->status)? 'success-subtle' : 'success' }}" style="margin-right: 10px" href="/todo/update/{{ $todo->id }}">
+                            <a class="btn btn-light p-2 bg-{{( $todo->status)? 'success-subtle' : 'success' }}" style="margin-right: 10px" href="/todo/update/{{ $todo->todo_id }}">
                                 <i class="bi-{{( $todo->status)? 'bi bi-recycle' : 'bi bi-check-square' }}"></i>
                             </a>
 
-                            <a class="btn btn-light p-2 bg-{{( $todo->status)? 'danger-subtle' : 'danger' }}" href="/todo/delete/{{ $todo->id }}">
+                            <a class="btn btn-light p-2 bg-{{( $todo->status)? 'danger-subtle' : 'danger' }}" href="/todo/destroy/{{ $todo->todo_id }}">
                                 <i class="bi bi-x-square"></i>
                             </a>
                         </li>

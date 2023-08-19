@@ -11,7 +11,7 @@ class TodoController extends Controller
 {
     public function index(): View
     {
-        $all_todos = Todo::all()->sortByDesc('id'); //->sortByDesc('id') (optional)
+        $all_todos = Todo::all()->sortByDesc('todo_id'); //->sortByDesc('id') (optional)
 
         return view('todolist', ['todos' => $all_todos]);
     }
@@ -26,18 +26,18 @@ class TodoController extends Controller
         return redirect('/');
     }
 
-    public function update(Request $request, $id): RedirectResponse
+    public function update(Request $request, $todo_id): RedirectResponse
     {
-        $todo = Todo::find($id);
+        $todo = Todo::find($todo_id);
         $todo->status = !$todo->status;
         $todo->save();
         
         return redirect('/');
     }
 
-    public function delete(Request $request, $id): RedirectResponse
+    public function destroy(Request $request, $todo_id): RedirectResponse
     {
-        $todo = Todo::find($id);
+        $todo = Todo::find($todo_id);
         $todo->delete();
 
         return redirect('/');
