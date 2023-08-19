@@ -16,7 +16,7 @@
             <div class="col-11 col-md-8 col-lg-6 mx-auto my-auto shadow-lg p-3 bg-body-secondary rounded">
                 <h1 class="text-center">Todo List</h1>
 
-                <form action="/todo/add" method="post">
+                <form action="/todo/create" method="post">
                     @csrf
                     <div class="input-group mb-3">
                         <input name="todo" type="text" class="form-control" placeholder="What do you want to do?">

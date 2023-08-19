@@ -16,7 +16,7 @@ class TodoController extends Controller
         return view('todolist', ['todos' => $all_todos]);
     }
 
-    public function add(Request $request): RedirectResponse
+    public function create(Request $request): RedirectResponse
     {
         $todo = new Todo;
         $todo->todo = $request->todo;
